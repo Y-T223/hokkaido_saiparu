@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>旭川市科学館 サイパル｜北国の自然と星空に出会う科学館</title>
+<meta name="description" content="北海道最大級の科学館、旭川市科学館サイパル。18m径170席のプラネタリウムと、北国の自然をテーマにした展示で、科学を体験しながら学べます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#101a30; --deep:#0a1224; --brass:#c2a266; --brass-d:#8f7440;
+  --paper:#e4e0d3; --ink:#1a2338; --mute:#9aa4b8;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--night);color:#dfe3ec;line-height:1.9;font-size:16px}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.5}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);color:var(--brass);letter-spacing:.12em;text-align:center;margin-bottom:12px}
+.rule{display:flex;align-items:center;gap:14px;justify-content:center;margin:0 auto 48px;color:var(--brass-d)}
+.rule::before,.rule::after{content:"";width:72px;height:1px;background:var(--brass-d)}
+.rule i{width:7px;height:7px;border:1px solid var(--brass);transform:rotate(45deg)}
+section{padding:96px 0}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:var(--deep) url("images/image1.jpg") center/cover no-repeat;padding:80px 24px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,36,.78),rgba(10,18,36,.9))}
+.orbit{position:absolute;left:50%;top:50%;width:min(130vw,980px);aspect-ratio:1;transform:translate(-50%,-50%);color:var(--brass);opacity:.35;pointer-events:none}
+.hero-in{position:relative;max-width:760px}
+.hero .sub{font-family:var(--serif);color:var(--brass);letter-spacing:.35em;font-size:.95rem;margin-bottom:20px}
+.hero h1{font-size:clamp(2.2rem,7vw,4.2rem);font-weight:800;letter-spacing:.14em;color:#f3ecd9;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.hero .name{margin-top:10px;font-family:var(--serif);font-size:clamp(1rem,2.6vw,1.3rem);letter-spacing:.2em;color:#d9d2bf}
+.hero p.lead{margin:28px auto 36px;max-width:34em;color:#cfd5e2}
+.btn{display:inline-block;text-decoration:none;font-family:var(--serif);font-weight:600;letter-spacing:.14em;padding:14px 36px;border:1px solid var(--brass);color:var(--brass);background:transparent;transition:background .2s,color .2s;cursor:pointer}
+.btn:hover{background:var(--brass);color:var(--deep)}
+.btn.solid{background:var(--brass);color:var(--deep)}
+.btn.solid:hover{background:#d7ba7c}
+
+/* strengths */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;border:1px solid rgba(194,162,102,.35)}
+.col{padding:40px 32px;border-right:1px solid rgba(194,162,102,.35)}
+.col:last-child{border-right:0}
+.col h3{color:#f3ecd9;font-size:1.2rem;margin-bottom:14px}
+.col p{color:#b9c1d3;font-size:.97rem}
+.big{font-family:var(--serif);font-size:2.6rem;color:var(--brass);line-height:1.2;margin-bottom:6px}
+.big small{font-size:1rem;margin-left:4px;color:var(--brass-d)}
+
+/* story (paper) */
+.paper{background:var(--paper);color:var(--ink)}
+.paper h2{color:var(--brass-d)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.story h3{font-size:1.35rem;margin-bottom:16px}
+.story p+p{margin-top:1em}
+.story .vert{border-left:1px solid var(--brass-d);padding-left:32px}
+@media(max-width:760px){.story{grid-template-columns:1fr;gap:36px}.story .vert{padding-left:20px}}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+.gal figure{background:var(--deep);border:1px solid rgba(194,162,102,.4);padding:10px;aspect-ratio:4/3}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.18) saturate(.9)}
+@media(max-width:640px){.gal{grid-template-columns:1fr}}
+
+/* reviews */
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.card{background:var(--deep);border:1px solid rgba(194,162,102,.35);padding:32px 28px}
+.stars{color:var(--brass);letter-spacing:.2em;font-size:1.05rem;margin-bottom:10px}
+.card p{color:#c7cddb;font-size:.95rem;white-space:pre-line}
+
+/* info */
+.info{max-width:760px;margin:0 auto;border-top:1px solid var(--brass-d)}
+.info div{display:grid;grid-template-columns:8.5em 1fr;gap:20px;padding:20px 4px;border-bottom:1px solid rgba(143,116,64,.5)}
+.info dt{font-family:var(--serif);color:var(--brass-d);font-weight:600}
+.info dd{font-size:.97rem}
+.info a{color:var(--ink);text-underline-offset:4px}
+@media(max-width:560px){.info div{grid-template-columns:1fr;gap:4px}}
+
+/* access */
+.map{max-width:860px;margin:0 auto;border:1px solid var(--brass);padding:8px;background:var(--deep)}
+.map iframe{display:block;width:100%;height:380px;border:0;filter:grayscale(.35) contrast(1.05)}
+.mapbtn{text-align:center;margin-top:28px}
+.addr{text-align:center;margin-top:22px;color:#b9c1d3;font-size:.95rem}
+
+/* sns + footer */
+.links{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:36px}
+.sns{display:flex;gap:18px;justify-content:center}
+.sns a{width:52px;height:52px;display:grid;place-items:center;border:1px solid var(--brass);border-radius:50%;color:var(--brass);transition:background .2s,color .2s}
+.sns a:hover{background:var(--brass);color:var(--deep)}
+.sns svg{width:22px;height:22px;fill:currentColor}
+footer{background:var(--deep);text-align:center;padding:40px 24px;color:var(--mute);font-size:.85rem;border-top:1px solid rgba(194,162,102,.3)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="orbit" viewBox="0 0 400 400" fill="none" stroke="currentColor" stroke-width=".5" aria-hidden="true">
+    <circle cx="200" cy="200" r="195"/><circle cx="200" cy="200" r="150"/><circle cx="200" cy="200" r="105"/><circle cx="200" cy="200" r="60"/>
+    <ellipse cx="200" cy="200" rx="195" ry="70" transform="rotate(-24 200 200)"/>
+    <circle cx="332" cy="128" r="3" fill="currentColor"/><circle cx="68" cy="270" r="2" fill="currentColor"/>
+  </svg>
+  <div class="hero-in">
+    <p class="sub">北海道・旭川</p>
+    <h1>星と大地に、<br>出会う場所。</h1>
+    <p class="name">旭川市科学館 サイパル</p>
+    <p class="lead">北国の自然をテーマにした展示と、18m径170席のプラネタリウム。北海道最大級の科学館で、ふれて、試して、学ぶ時間を。</p>
+    <a class="btn solid" href="#access">アクセスを見る</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>サイパルの魅力</h2><div class="rule"><i></i></div>
+    <div class="cols">
+      <div class="col"><div class="big">18<small>m径</small></div><h3>170席のプラネタリウム</h3><p>直径18mのドームに170席。子ども向けのプログラムもあり、家族そろって星空を楽しめます。</p></div>
+      <div class="col"><div class="big">北国</div><h3>地域性の強い独自展示</h3><p>北国の自然をテーマにした展示室。さまざまな科学の装置に、実際にふれて試せます。</p></div>
+      <div class="col"><div class="big">体験</div><h3>ショーと工作のイベント</h3><p>科学ショーや工作体験などのイベントを定期的に開催しています。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="paper">
+  <div class="wrap">
+    <h2>科学館のこと</h2><div class="rule"><i></i></div>
+    <div class="story">
+      <div>
+        <h3>市民と子どもたちが、<br>科学に親しむ場所として。</h3>
+        <p>サイパルは、市民と子どもたちが科学に親しみ、体験しながら学べる場を提供する目的でつくられました。</p>
+        <p>旭川市が設立・運営し、北海道最大級の科学館として、地域の科学教育の発展を図っています。</p>
+      </div>
+      <div class="vert">
+        <h3>イチオシは、プラネタリウム。</h3>
+        <p>プラネタリウムに加え、定期的に科学ショーや工作体験などのイベントを開催しています。</p>
+        <p>開催内容は、お出かけ前に公式サイトでご確認ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>館内の様子</h2><div class="rule"><i></i></div>
+    <div class="gal">
+      <figure><img src="images/image2.jpg" alt="旭川市科学館サイパルの展示室" loading="lazy"></figure>
+      <figure><img src="images/image3.jpg" alt="旭川市科学館サイパルのプラネタリウムや体験展示" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="paper">
+  <div class="wrap">
+    <h2>ご来館者の声</h2><div class="rule"><i></i></div>
+    <div class="rev">
+      <article class="card">
+        <div class="stars" aria-label="5点満点中4点">★★★★</div>
+        <p>日曜日の10時に５歳と３歳の子供達と遊びにいきました！10時40分からの子供向けプラネタリウムのプログラムも面白く、展示室も色々な科学の装置がたくさんあるのでとても楽しいです。今回は一時間ぐらいしか時間取れなかったですが、1～2時間遊ぶのにもぴったりの場所です！</p>
+      </article>
+      <article class="card">
+        <div class="stars" aria-label="5点満点中5点">★★★★★</div>
+        <p>常設展示も興味深い内容で、子どもも大人も楽しめる科学館でした。
+スタッフの皆さんの接客が丁寧で初めて行っても安心できます。
+
+特別展の特撮のDNAも良かったです。
+クラフトでゴジラは丁寧にサポートしてくれて楽しかったです。
+是非、自分だけのゴジラストラップを作ってみてください！</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>施設案内</h2><div class="rule"><i></i></div>
+    <dl class="info" style="color:#dfe3ec">
+      <div><dt>施設名</dt><dd>旭川市科学館 サイパル</dd></div>
+      <div><dt>住所</dt><dd>旭川市宮前1条3丁目3番32号</dd></div>
+      <div><dt>電話番号</dt><dd><a href="tel:0166313186" style="color:#dfe3ec">0166-31-3186</a></dd></div>
+      <div><dt>休館日</dt><dd>毎週月曜日（月曜日が祝日の場合は翌日の火曜日、火曜日以降も祝日が連続する時は最終祝日の翌日）<br>年末年始（12月30日から1月4日まで。ただし1月2日は臨時開館）<br>毎月の月曜以外の最終平日</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="paper" id="access">
+  <div class="wrap">
+    <h2>アクセス</h2><div class="rule"><i></i></div>
+    <div class="map">
+      <iframe title="旭川市科学館 サイパルの地図" src="https://www.google.com/maps?q=%E6%97%AD%E5%B7%9D%E5%B8%82%E5%AE%AE%E5%89%8D1%E6%9D%A13%E4%B8%81%E7%9B%AE3%E7%95%AA32%E5%8F%B7%20%E6%97%AD%E5%B7%9D%E5%B8%82%E7%A7%91%E5%AD%A6%E9%A4%A8%20%E3%82%B5%E3%82%A4%E3%83%91%E3%83%AB&hl=ja&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+    <div class="mapbtn"><a class="btn solid" style="background:var(--ink);border-color:var(--ink);color:#f3ecd9" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AD%E5%B7%9D%E5%B8%82%E7%A7%91%E5%AD%A6%E9%A4%A8%20%E3%82%B5%E3%82%A4%E3%83%91%E3%83%AB%20%E6%97%AD%E5%B7%9D%E5%B8%82%E5%AE%AE%E5%89%8D1%E6%9D%A13%E4%B8%81%E7%9B%AE3%E7%95%AA32%E5%8F%B7" target="_blank" rel="noopener">Googleマップで開く</a></div>
+    <p class="addr" style="color:#4a5470">旭川市宮前1条3丁目3番32号</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>お問い合わせ・最新情報</h2><div class="rule"><i></i></div>
+    <div class="links">
+      <a class="btn" href="https://www.city.asahikawa.hokkaido.jp/science/" target="_blank" rel="noopener">公式ホームページ</a>
+      <a class="btn" href="https://www.city.asahikawa.hokkaido.jp/inquiry/mailform85330000.html" target="_blank" rel="noopener">お問い合わせフォーム</a>
+    </div>
+    <div class="sns">
+      <a href="https://x.com/scipalAsahikawa" target="_blank" rel="noopener" aria-label="X（旧Twitter）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.youtube.com/channel/UCf6Zk1xuVlWr7SlZ621k-Tw" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>旭川市科学館 サイパル　旭川市宮前1条3丁目3番32号　TEL 0166-31-3186</p>
+</footer>
+</body>
+</html>
